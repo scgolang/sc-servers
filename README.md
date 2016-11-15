@@ -11,12 +11,8 @@ managing instances of [scsynth](http://supercollider.github.io/).
 /sc/server/start
 ```
 
-[top](#api)
-
 ### Response
 
 ```
 /sc/server/started s:host i:port
 ```
-
-[top](#api)
