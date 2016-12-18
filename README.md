@@ -5,14 +5,4 @@ managing instances of [scsynth](http://supercollider.github.io/).
 
 # API
 
-## Start Server
-
-```
-/sc/server/start
-```
-
-### Response
-
-```
-/sc/server/started s:host i:port
-```
+See [the wiki](https://github.com/scgolang/sc-servers/wiki/API).
