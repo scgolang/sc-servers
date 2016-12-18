@@ -11,6 +11,9 @@ const (
 
 	// AddressStartServer is the OSC address used for starting instances of scsynth.
 	AddressStartServer = "/sc/server/start"
+
+	// AddressStopServer is the OSC address used for stopping instances of scsynth.
+	AddressStopServer = "/sc/server/stop"
 )
 
 func main() {
