@@ -27,6 +27,8 @@ func main() {
 	}
 	defer app.Close()
 
+	log.Println("starting sc-servers")
+
 	if err := app.Wait(); err != nil {
 		log.Fatal(err)
 	}
