@@ -7,6 +7,7 @@ import (
 	"os"
 	"strings"
 	"sync/atomic"
+	"time"
 
 	"github.com/pkg/errors"
 	"github.com/scgolang/nsm"
@@ -90,7 +91,7 @@ func (app *App) Spawn() error {
 	if err := app.Logf("starting scsynth on port %d", app.port); err != nil {
 		log.Fatal(err)
 	}
-	if err := server.Start(); err != nil {
+	if _, _, err := server.Start(5 * time.Second); err != nil {
 		errors.Wrap(err, "could not start scsynth")
 	}
 	if err := app.Logf("started scsynth on port %d", app.port); err != nil {
