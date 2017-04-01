@@ -1,0 +1,28 @@
+hash: e986fb15178db0a0e0969e30575b20e7de3136d7bc51a9a6eee08908e37b84c9
+updated: 2016-12-11T09:16:02.667834253-06:00
+imports:
+- name: github.com/awalterschulze/gographviz
+  version: 609eb77bad9f92f83854891fba4a0d03f075f5aa
+  subpackages:
+  - ast
+  - errors
+  - lexer
+  - parser
+  - token
+- name: github.com/pkg/errors
+  version: 645ef00459ed84a119197bfb8d8205042c6df63d
+- name: github.com/scgolang/nsm
+  version: 9e0d8b98e4d7b1b14651bcdb3c0ca295f837cf5d
+- name: github.com/scgolang/osc
+  version: 21c5315c581b7ca8d38d1dbf31ddb7d414eec81b
+- name: github.com/scgolang/sc
+  version: ec15435572cd66fa3c680d32362339894592d5b3
+- name: golang.org/x/net
+  version: b1a2d6e8c8b5fc8f601ead62536f02a8e1b6217d
+  subpackages:
+  - context
+- name: golang.org/x/sync
+  version: 450f422ab23cf9881c94e2db30cac0eb1b7cf80c
+  subpackages:
+  - errgroup
+testImports: []
