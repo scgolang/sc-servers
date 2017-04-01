@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"log"
@@ -56,7 +57,7 @@ func (app *App) Save() (string, nsm.Error) {
 // Methods returns osc methods.
 func (app *App) Methods() osc.Dispatcher {
 	return osc.Dispatcher{
-		AddressStartServer: func(msg *osc.Message) error {
+		AddressStartServer: osc.Method(func(msg osc.Message) error {
 			if err := app.Log(AddressStartServer); err != nil {
 				log.Fatal(err)
 			}
@@ -65,7 +66,7 @@ func (app *App) Methods() osc.Dispatcher {
 			}
 			app.port = atomic.AddInt32(&app.port, int32(1))
 			return nil
-		},
+		}),
 	}
 }
 
@@ -119,7 +120,7 @@ func main() {
 	app := &App{port: 57120}
 	defer app.Close()
 
-	nc, err := nsm.NewClient(nsm.ClientConfig{
+	nc, err := nsm.NewClient(context.Background(), nsm.ClientConfig{
 		Session: app,
 		Name:    "sc-servers",
 		PID:     os.Getpid(),
